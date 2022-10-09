@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package user;
+
+service UserService{
+    rpc Create(UserRequest) returns (User);
+    rpc Delete(id) returns (Empty);
+    rpc Update(User) returns (User);
+    rpc Get(id) returns (User);
+}
+
+message User {
+    int64 id = 1;
+    string name = 2;
+    string last_name = 3;
+}
+message UserRequest{
+    string name = 1;
+    string last_name = 2;
+}
+message id {
+    int64 id = 1;
+}
+
+message Empty {}
